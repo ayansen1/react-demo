@@ -4,11 +4,6 @@ jobs:
   print-events:
     runs-on: ubuntu-latest
     steps:
-    - name: Code checkout
-      uses: actions/checkout@v3
-    - name: print events
-      uses: echo "{{ github.event }}"
-
-
-
+      - name: print events
+        uses: echo "${{ toJSON(github.event) }}"
   
